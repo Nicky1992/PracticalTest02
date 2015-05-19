@@ -18,8 +18,8 @@
         <item>GET</item>
         <item>POST</item>
     </string-array>
-        <string name="plus">Plus</string>
-        <string name="mul">Mul</string>
+        <string name="plus">+</string>
+        <string name="mul">*</string>
         <string name="port">Port Server</string>
 
 </resources>

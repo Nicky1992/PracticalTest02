@@ -19,7 +19,7 @@ public class ServerThread extends Thread {
 		try {
 			this.serverSocket = new ServerSocket(port);
 		} catch (IOException ioException) {
-			Log.e(ro.pub.cs.systems.pdsd.practicaltest02.Constants.TAG, "An exception has occurred: " + ioException.getMessage());
+			Log.e(Constants.TAG, "An exception has occurred: " + ioException.getMessage());
 			if (Constants.DEBUG) {
 				ioException.printStackTrace();
 			}
@@ -49,7 +49,7 @@ public class ServerThread extends Thread {
 				Log.i(Constants.TAG, "[SERVER] Waiting for a connection...");
 				Socket socket = serverSocket.accept();
 				Log.i(Constants.TAG, "[SERVER] A connection request was received from " + socket.getInetAddress() + ":" + socket.getLocalPort());
-				CommunicationThread communicationThread = new CommunicationThread(this, socket);
+				CommunicationThread communicationThread = new CommunicationThread(socket);
 				communicationThread.start();
 			}			
 		} catch (ClientProtocolException clientProtocolException) {
